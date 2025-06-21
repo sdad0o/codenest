@@ -1,335 +1,731 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>عروض وخدمات تصميم المواقع - Codenest</title>
-<style>
-  body {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background: #f9f9f9;
-    color: #222;
-    margin: 20px;
-    line-height: 1.6;
-  }
-  h1, h2, h3 {
-    color: #064273;
-    margin-bottom: 10px;
-  }
-  h1 {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 30px;
-    direction: rtl;
-  }
-  th, td {
-    border: 1px solid #aaa;
-    padding: 10px 8px;
-    text-align: center;
-    font-size: 14px;
-  }
-  th {
-    background-color: #064273;
-    color: white;
-  }
-  tr:nth-child(even) {
-    background-color: #e8f0fe;
-  }
-  section {
-    margin-bottom: 50px;
-  }
-  .example {
-    background-color: #dbe9ff;
-    border-left: 6px solid #064273;
-    padding: 15px 20px;
-    margin-top: -15px;
-    margin-bottom: 30px;
-    font-style: italic;
-  }
-  footer {
-    text-align: center;
-    color: #555;
-    font-size: 13px;
-    margin-top: 40px;
-  }
-  a {
-    color: #064273;
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
-  @media (max-width: 768px) {
-    th, td {
-      font-size: 12px;
-      padding: 8px 5px;
-    }
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عروض وخدمات تصميم المواقع - Codenest</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#064273',
+                        secondary: '#0a3b70',
+                        accent: '#3b82f6',
+                        light: '#dbe9ff'
+                    },
+                    fontFamily: {
+                        arabic: ['Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap');
+
+        body {
+            font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .hero-pattern {
+            background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.15) 1px, transparent 0);
+            background-size: 30px 30px;
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .glow {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+        }
+
+        .glass {
+            backdrop-filter: blur(16px) saturate(180%);
+            background-color: rgba(255, 255, 255, 0.75);
+            border: 1px solid rgba(209, 213, 219, 0.3);
+        }
+
+        .table-modern {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
-<body>
 
-<h1>عروض وخدمات تصميم المواقع - <span style="color:#0a3b70;">Codenest</span></h1>
+<body class="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 min-h-screen">
 
-<section>
-  <h2>مقدمة</h2>
-  <p>
-    نقدم لك في <strong>Codenest</strong> باقات تصميم مواقع متكاملة تناسب مختلف احتياجات الأفراد والشركات الناشئة والمتاجر والمحلات المحلية.
-    تم ترتيب الباقات بأسلوب واضح واحترافي مع أمثلة واقعية لكل باقة لتسهيل اختيار الأنسب لك.
-  </p>
-  <p>للتواصل: <a href="mailto:info@codenest.com">info@codenest.com</a> | <a href="http://www.codenest.com" target="_blank">www.codenest.com</a></p>
-</section>
+    <!-- Navigation -->
+    <nav class="glass fixed top-0 w-full z-50 px-6 py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold text-primary">
+                <i class="fas fa-code text-accent ml-2"></i>
+                Codenest
+            </div>
+            <div class="hidden md:flex space-x-reverse space-x-8">
+                <a href="#services" class="text-gray-700 hover:text-primary transition-colors">الخدمات</a>
+                <a href="#packages" class="text-gray-700 hover:text-primary transition-colors">الباقات</a>
+                <a href="#contact" class="text-gray-700 hover:text-primary transition-colors">التواصل</a>
+            </div>
+        </div>
+    </nav>
 
-<section>
-  <h2>1. باقات الأفراد (المواقع الشخصية)</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>الباقة</th>
-        <th>مناسبة لـ</th>
-        <th>الصفحات</th>
-        <th>الأقسام الرئيسية</th>
-        <th>مميزات إضافية</th>
-        <th>مدة التسليم</th>
-        <th>السعر (دولار)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>الأساسية</td>
-        <td>بداية بسيطة للحضور الإلكتروني</td>
-        <td>صفحة واحدة</td>
-        <td>هيرو سكشن - عن الشخص - خدمات - تواصل - نموذج إيميل</td>
-        <td>متجاوب مع الجوال فقط</td>
-        <td>3 أيام</td>
-        <td>100</td>
-      </tr>
-      <tr>
-        <td>المتقدمة</td>
-        <td>حضور مهني بميزات عملية</td>
-        <td>حتى 3 صفحات</td>
-        <td>كل ما في الأساسية + سيرة ذاتية + تحميل CV PDF + QR Card رقمي + معرض صور أو فيديو + 3 مراجعات</td>
-        <td>متجاوب مع الجوال والتابلت</td>
-        <td>5 أيام</td>
-        <td>200</td>
-      </tr>
-      <tr>
-        <td>الاحترافية</td>
-        <td>حضور احترافي متكامل وموسع</td>
-        <td>5 صفحات أو أكثر</td>
-        <td>كل ما في المتقدمة + نظام حجز مواعيد + مدونة/مقالات + تقييمات العملاء + FAQ + تصميم بلغتين + 5 مراجعات</td>
-        <td>متجاوب مع جميع الأجهزة</td>
-        <td>7-10 أيام</td>
-        <td>350 – 400</td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="example">
-    <strong>مثال عملي – باقة المتقدمة:</strong><br>
-    عميل مستقل مهندس يريد موقع بسيط لتعريف خدماته مع تحميل سيرته الذاتية وقسم معرض أعمال. الموقع متجاوب مع الجوال والتابلت، يمكنه تحديث معرض الصور بسهولة ويستطيع العملاء التواصل عبر نموذج إيميل مباشر.
-  </div>
-</section>
+    <!-- Hero Section -->
+    <section
+        class="gradient-bg hero-pattern min-h-screen flex items-center justify-center text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-20"></div>
+        <div class="container mx-auto px-6 text-center relative z-10 fade-in">
+            <div class="floating mb-8">
+                <i class="fas fa-laptop-code text-6xl mb-6 text-yellow-300"></i>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                عروض وخدمات تصميم المواقع
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto">
+                نقدم لك في <span class="text-yellow-300 font-bold">Codenest</span> باقات تصميم مواقع متكاملة تناسب مختلف
+                احتياجات الأفراد والشركات الناشئة والمتاجر والمحلات المحلية
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#packages"
+                    class="bg-yellow-400 hover:bg-yellow-500 text-black px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 glow">
+                    استكشف الباقات
+                </a>
+                <a href="mailto:info@codenest.com"
+                    class="border-2 border-white hover:bg-white hover:text-primary px-8 py-4 rounded-full font-bold text-lg transition-all">
+                    تواصل معنا
+                </a>
+            </div>
+        </div>
 
-<section>
-  <h2>2. باقات الشركات الناشئة</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>الباقة</th>
-        <th>مناسبة لـ</th>
-        <th>الصفحات</th>
-        <th>الأقسام الرئيسية</th>
-        <th>مميزات إضافية</th>
-        <th>مدة التسليم</th>
-        <th>السعر (دولار)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>البداية</td>
-        <td>شركة ناشئة في أول طريقها</td>
-        <td>صفحة واحدة (Landing) – 4 أقسام</td>
-        <td>من نحن - المميزات - تواصل - CTA - 1 مراجعة</td>
-        <td>متجاوب مع الجوال فقط</td>
-        <td>3 أيام</td>
-        <td>120</td>
-      </tr>
-      <tr>
-        <td>النمو</td>
-        <td>شركة بدأت باستقطاب العملاء</td>
-        <td>صفحة رئيسية + 2 إضافية</td>
-        <td>كل ما في البداية + نموذج تواصل + صور تعبيرية + SEO أساسي + 3 مراجعات</td>
-        <td>متجاوب جوال وتابلت</td>
-        <td>5 أيام</td>
-        <td>250</td>
-      </tr>
-      <tr>
-        <td>الاحتراف</td>
-        <td>شركة تريد الظهور بشكل احترافي</td>
-        <td>حتى 5 صفحات</td>
-        <td>كل ما في النمو + لوحة تحكم + دعم لغتين + ربط Mailchimp أو WhatsApp + خطة SEO مخصصة + 5 مراجعات</td>
-        <td>متجاوب مع جميع الأجهزة وجاهز للإعلانات</td>
-        <td>7-10 أيام</td>
-        <td>450 – 500</td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="example">
-    <strong>مثال عملي – باقة النمو:</strong><br>
-    شركة ناشئة بدأت تتوسع، تحتاج موقع يحتوي على صفحة رئيسية وصفحات من نحن وتواصل مع نموذج تواصل وسيو أساسي لجذب الزوار. الموقع متوافق مع الجوال والتابلت ويحتوي على صور تعبيرية لجذب العملاء.
-  </div>
-</section>
+        <!-- Floating elements -->
+        <div class="absolute top-20 left-20 w-20 h-20 bg-yellow-300 rounded-full opacity-20 floating"></div>
+        <div class="absolute bottom-20 right-20 w-32 h-32 bg-blue-300 rounded-full opacity-20 floating"
+            style="animation-delay: -1s;"></div>
+        <div class="absolute top-1/2 left-10 w-16 h-16 bg-green-300 rounded-full opacity-20 floating"
+            style="animation-delay: -2s;"></div>
+    </section>
 
-<section>
-  <h2>3. باقات حسابات البيع على منصات التواصل</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>الباقة</th>
-        <th>مناسبة لـ</th>
-        <th>الصفحات</th>
-        <th>الميزات</th>
-        <th>جاهز للإعلانات</th>
-        <th>التسليم</th>
-        <th>السعر (دولار)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>الأساسية</td>
-        <td>حساب صغير في بدايته</td>
-        <td>صفحة واحدة (منتج مميز + تواصل)</td>
-        <td>شبكة منتجات ثابتة - روابط واتساب وإنستغرام - مراجعة واحدة</td>
-        <td>❌</td>
-        <td>3-4 أيام</td>
-        <td>130</td>
-      </tr>
-      <tr>
-        <td>المتوسطة</td>
-        <td>حساب نشط ويحتاج عرض احترافي</td>
-        <td>3 صفحات (الرئيسية – المنتجات – تواصل)</td>
-        <td>كل ما في الأساسية + تصنيفات - سلايدر منتجات - نموذج طلب - 3 مراجعات</td>
-        <td>✅</td>
-        <td>5-6 أيام</td>
-        <td>250</td>
-      </tr>
-      <tr>
-        <td>المتقدمة</td>
-        <td>مشروع تجاري يدير مبيعاته بشكل دوري</td>
-        <td>5 صفحات (منتجات – من نحن – تصنيفات – تواصل – سياسة)</td>
-        <td>كل ما في المتوسطة + لوحة تحكم - فلترة حسب السعر أو النوع - استضافة + دومين - دعم لغتين - 5 مراجعات</td>
-        <td>✅</td>
-        <td>7-10 أيام</td>
-        <td>500 – 600</td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="example">
-    <strong>مثال عملي – باقة المتقدمة:</strong><br>
-    مشروع تجاري لديه مبيعات مستمرة ويحتاج موقع متعدد الصفحات مع لوحة تحكم لإدارة المنتجات والطلبات، فلترة المنتجات، ودعم لغتين. كما يتضمن استضافة ودومين ودعم فني مستمر.
-  </div>
-</section>
+    <!-- Services Overview -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-primary mb-6">خدماتنا المتميزة</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">نوفر حلول تصميم متكاملة لجميع أنواع المشاريع</p>
+            </div>
 
-<section>
-  <h2>4. باقات المحلات المحلية والعلامات التجارية</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>الباقة</th>
-        <th>مناسبة لـ</th>
-        <th>الصفحات</th>
-        <th>الميزات</th>
-        <th>الحجز</th>
-        <th>التسليم</th>
-        <th>السعر (دولار)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>الأساسية</td>
-        <td>محلات صغيرة تحتاج عرض بسيط</td>
-        <td>صفحة واحدة (غلاف – خدمات – تواصل)</td>
-        <td>متجاوب مع الجوال - موقع بالخريطة - أوقات العمل - مراجعة واحدة</td>
-        <td>❌</td>
-        <td>3-4 أيام</td>
-        <td>130</td>
-      </tr>
-      <tr>
-        <td>المتوسطة</td>
-        <td>محل نشط يريد حجز أو طلب</td>
-        <td>3 صفحات (الرئيسية – منيو/خدمات – تواصل)</td>
-        <td>كل ما في الأساسية + تصنيفات وخدمات مفصلة - نموذج حجز بسيط - صور للعروض أو المنيو - 3 مراجعات</td>
-        <td>✅ حجز بسيط</td>
-        <td>5-6 أيام</td>
-        <td>250</td>
-      </tr>
-      <tr>
-        <td>الاحترافية</td>
-        <td>علامة تجارية محلية تريد التوسع</td>
-        <td>5 صفحات (الرئيسية – منيو – تواصل – الحجز – من نحن)</td>
-        <td>كل ما في المتوسطة + نظام حجز كامل بوقت وتاريخ - لوحة تحكم لإدارة الأوقات والمنيو - دومين + استضافة - دعم لغتين - 5 مراجعات</td>
-        <td>✅ حجز كامل</td>
-        <td>7-10 أيام</td>
-        <td>500 – 600</td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="example">
-    <strong>مثال عملي – باقة الاحترافية:</strong><br>
-    محل يقدم خدمات متعددة مع نظام حجز متكامل لإدارة المواعيد عبر لوحة تحكم سهلة الاستخدام، دعم لغتين مع استضافة ودومين خاص، وعرض كامل للموقع عبر جميع الأجهزة.
-  </div>
-</section>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div
+                    class="card-hover bg-gradient-to-br from-blue-500 to-purple-600 p-8 rounded-2xl text-white text-center">
+                    <i class="fas fa-user text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">المواقع الشخصية</h3>
+                    <p class="opacity-90">مواقع احترافية للأفراد والمستقلين</p>
+                </div>
 
-<section>
-  <h2>5. الإضافات والخدمات الإضافية</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>الإضافة</th>
-        <th>السعر (دولار)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>دومين + استضافة (إذا لم تكن مشمولة)</td>
-        <td>100 دولار / سنة</td>
-      </tr>
-      <tr>
-        <td>نظام حجز فقط</td>
-        <td>+150 دولار</td>
-      </tr>
-      <tr>
-        <td>صيانة شهرية (تحديث منيو/ساعات/صور)</td>
-        <td>30 – 70 دولار</td>
-      </tr>
-      <tr>
-        <td>لغة إضافية</td>
-        <td>+50 دولار</td>
-      </tr>
-      <tr>
-        <td>حجز مباشر مع إشعارات واتساب (إذا أمكن)</td>
-        <td>+50 دولار</td>
-      </tr>
-      <tr>
-        <td>تصميم شعار بسيط</td>
-        <td>+30 دولار</td>
-      </tr>
-      <tr>
-        <td>تسريع التسليم (48 ساعة)</td>
-        <td>+50 دولار</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
+                <div
+                    class="card-hover bg-gradient-to-br from-green-500 to-teal-600 p-8 rounded-2xl text-white text-center">
+                    <i class="fas fa-rocket text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">الشركات الناشئة</h3>
+                    <p class="opacity-90">مواقع متطورة للشركات الجديدة</p>
+                </div>
 
-<footer>
-  <p>Codenest | تصميم احترافي وحلول متكاملة لموقعك الإلكتروني</p>
-  <p>info@codenest.com | www.codenest.com</p>
-</footer>
+                <div
+                    class="card-hover bg-gradient-to-br from-orange-500 to-red-600 p-8 rounded-2xl text-white text-center">
+                    <i class="fas fa-shopping-cart text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">حسابات البيع</h3>
+                    <p class="opacity-90">مواقع للبيع عبر وسائل التواصل</p>
+                </div>
 
+                <div
+                    class="card-hover bg-gradient-to-br from-purple-500 to-pink-600 p-8 rounded-2xl text-white text-center">
+                    <i class="fas fa-store text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">المحلات المحلية</h3>
+                    <p class="opacity-90">مواقع للمحلات والعلامات التجارية</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Individual Packages -->
+    <section id="packages" class="py-20 bg-gradient-to-r from-gray-50 to-blue-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-primary mb-6">باقات الأفراد</h2>
+                <p class="text-xl text-gray-600">مواقع شخصية احترافية تناسب احتياجاتك</p>
+            </div>
+
+            <div class="overflow-x-auto">
+                <div class="table-modern bg-white min-w-full">
+                    <table class="w-full">
+                        <thead class="bg-gradient-to-r from-primary to-secondary text-white">
+                            <tr>
+                                <th class="px-6 py-4 text-right font-bold">الباقة</th>
+                                <th class="px-6 py-4 text-right font-bold">مناسبة لـ</th>
+                                <th class="px-6 py-4 text-right font-bold">الصفحات</th>
+                                <th class="px-6 py-4 text-right font-bold">المميزات</th>
+                                <th class="px-6 py-4 text-right font-bold">التسليم</th>
+                                <th class="px-6 py-4 text-right font-bold">السعر</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="hover:bg-blue-50 transition-colors">
+                                <td class="px-6 py-4 font-bold text-blue-600">الأساسية</td>
+                                <td class="px-6 py-4">بداية بسيطة للحضور الإلكتروني</td>
+                                <td class="px-6 py-4"><span
+                                        class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm">صفحة
+                                        واحدة</span></td>
+                                <td class="px-6 py-4 text-sm">هيرو سكشن - عن الشخص - خدمات - تواصل - نموذج إيميل</td>
+                                <td class="px-6 py-4"><i class="fas fa-clock text-blue-500 ml-1"></i>3 أيام</td>
+                                <td class="px-6 py-4 font-bold text-2xl text-green-600">$100</td>
+                            </tr>
+                            <tr class="bg-blue-25 hover:bg-blue-75 transition-colors">
+                                <td class="px-6 py-4 font-bold text-purple-600">المتقدمة</td>
+                                <td class="px-6 py-4">حضور مهني بميزات عملية</td>
+                                <td class="px-6 py-4"><span
+                                        class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-sm">حتى 3
+                                        صفحات</span></td>
+                                <td class="px-6 py-4 text-sm">كل ما في الأساسية + سيرة ذاتية + تحميل CV + QR Card + معرض
+                                </td>
+                                <td class="px-6 py-4"><i class="fas fa-clock text-blue-500 ml-1"></i>5 أيام</td>
+                                <td class="px-6 py-4 font-bold text-2xl text-green-600">$200</td>
+                            </tr>
+                            <tr class="hover:bg-blue-50 transition-colors border-2 border-yellow-300 bg-yellow-50">
+                                <td class="px-6 py-4 font-bold text-orange-600">الاحترافية <span
+                                        class="bg-yellow-400 text-yellow-900 px-2 py-1 rounded-full text-xs mr-2">الأكثر
+                                        طلباً</span></td>
+                                <td class="px-6 py-4">حضور احترافي متكامل وموسع</td>
+                                <td class="px-6 py-4"><span
+                                        class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-sm">5+ صفحات</span>
+                                </td>
+                                <td class="px-6 py-4 text-sm">كل ما سبق + نظام حجز + مدونة + تقييمات + FAQ + لغتين</td>
+                                <td class="px-6 py-4"><i class="fas fa-clock text-blue-500 ml-1"></i>7-10 أيام</td>
+                                <td class="px-6 py-4 font-bold text-2xl text-green-600">$350-400</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="mt-8 p-6 bg-gradient-to-r from-blue-100 to-purple-100 rounded-2xl border-r-4 border-blue-500">
+                <h4 class="font-bold text-lg text-blue-800 mb-2">
+                    <i class="fas fa-lightbulb text-yellow-500 ml-2"></i>
+                    مثال عملي – باقة المتقدمة:
+                </h4>
+                <p class="text-blue-700">
+                    عميل مستقل مهندس يريد موقع بسيط لتعريف خدماته مع تحميل سيرته الذاتية وقسم معرض أعمال. الموقع متجاوب
+                    مع الجوال والتابلت، يمكنه تحديث معرض الصور بسهولة ويستطيع العملاء التواصل عبر نموذج إيميل مباشر.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Startup Packages -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-primary mb-6">باقات الشركات الناشئة</h2>
+                <p class="text-xl text-gray-600">حلول متطورة للشركات في بداية نموها</p>
+            </div>
+
+            <div class="overflow-x-auto">
+                <div class="table-modern bg-white min-w-full">
+                    <table class="w-full">
+                        <thead class="bg-gradient-to-r from-green-600 to-teal-600 text-white">
+                            <tr>
+                                <th class="px-6 py-4 text-right font-bold">الباقة</th>
+                                <th class="px-6 py-4 text-right font-bold">مناسبة لـ</th>
+                                <th class="px-6 py-4 text-right font-bold">الصفحات</th>
+                                <th class="px-6 py-4 text-right font-bold">المميزات</th>
+                                <th class="px-6 py-4 text-right font-bold">التسليم</th>
+                                <th class="px-6 py-4 text-right font-bold">السعر</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="hover:bg-green-50 transition-colors">
+                                <td class="px-6 py-4 font-bold text-green-600">البداية</td>
+                                <td class="px-6 py-4">شركة ناشئة في أول طريقها</td>
+                                <td class="px-6 py-4"><span
+                                        class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm">Landing
+                                        Page</span></td>
+                                <td class="px-6 py-4 text-sm">من نحن - المميزات - تواصل - CTA - 1 مراجعة</td>
+                                <td class="px-6 py-4"><i class="fas fa-clock text-green-500 ml-1"></i>3 أيام</td>
+                                <td class="px-6 py-4 font-bold text-2xl text-green-600">$120</td>
+                            </tr>
+                            <tr class="bg-green-25 hover:bg-green-75 transition-colors">
+                                <td class="px-6 py-4 font-bold text-teal-600">النمو</td>
+                                <td class="px-6 py-4">شركة بدأت باستقطاب العملاء</td>
+                                <td class="px-6 py-4"><span
+                                        class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-sm">3
+                                        صفحات</span></td>
+                                <td class="px-6 py-4 text-sm">كل ما سبق + نموذج تواصل + صور + SEO أساسي</td>
+                                <td class="px-6 py-4"><i class="fas fa-clock text-green-500 ml-1"></i>5 أيام</td>
+                                <td class="px-6 py-4 font-bold text-2xl text-green-600">$250</td>
+                            </tr>
+                            <tr class="hover:bg-green-50 transition-colors border-2 border-green-300 bg-green-50">
+                                <td class="px-6 py-4 font-bold text-emerald-600">الاحتراف <span
+                                        class="bg-green-400 text-green-900 px-2 py-1 rounded-full text-xs mr-2">موصى
+                                        به</span></td>
+                                <td class="px-6 py-4">شركة تريد الظهور بشكل احترافي</td>
+                                <td class="px-6 py-4"><span
+                                        class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-sm">حتى 5
+                                        صفحات</span></td>
+                                <td class="px-6 py-4 text-sm">كل ما سبق + لوحة تحكم + لغتين + Mailchimp + SEO مخصص</td>
+                                <td class="px-6 py-4"><i class="fas fa-clock text-green-500 ml-1"></i>7-10 أيام</td>
+                                <td class="px-6 py-4 font-bold text-2xl text-green-600">$450-500</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Sales Packages -->
+    <section class="py-20 bg-gradient-to-br from-orange-50 to-red-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-primary mb-6">باقات حسابات البيع</h2>
+                <p class="text-xl text-gray-600">مواقع احترافية لحسابات التواصل الاجتماعي</p>
+            </div>
+
+            <div class="overflow-x-auto">
+                <div class="table-modern bg-white min-w-full">
+                    <table class="w-full">
+                        <thead class="bg-gradient-to-r from-orange-600 to-red-600 text-white">
+                            <tr>
+                                <th class="px-6 py-4 text-right font-bold">الباقة</th>
+                                <th class="px-6 py-4 text-right font-bold">مناسبة لـ</th>
+                                <th class="px-6 py-4 text-right font-bold">الميزات</th>
+                                <th class="px-6 py-4 text-right font-bold">جاهز للإعلانات</th>
+                                <th class="px-6 py-4 text-right font-bold">التسليم</th>
+                                <th class="px-6 py-4 text-right font-bold">السعر</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="hover:bg-orange-50 transition-colors">
+                                <td class="px-6 py-4 font-bold text-orange-600">الأساسية</td>
+                                <td class="px-6 py-4">حساب صغير في بدايته</td>
+                                <td class="px-6 py-4 text-sm">شبكة منتجات - روابط واتساب وإنستغرام - مراجعة واحدة</td>
+                                <td class="px-6 py-4"><span
+                                        class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-sm">❌</span></td>
+                                <td class="px-6 py-4"><i class="fas fa-clock text-orange-500 ml-1"></i>3-4 أيام</td>
+                                <td class="px-6 py-4 font-bold text-2xl text-green-600">$130</td>
+                            </tr>
+                            <tr class="bg-orange-25 hover:bg-orange-75 transition-colors">
+                                <td class="px-6 py-4 font-bold text-red-600">المتوسطة</td>
+                                <td class="px-6 py-4">حساب نشط يحتاج عرض احترافي</td>
+                                <td class="px-6 py-4 text-sm">كل ما سبق + تصنيفات - سلايدر منتجات - نموذج طلب</td>
+                                <td class="px-6 py-4"><span
+                                        class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm">✅</span></td>
+                                <td class="px-6 py-4"><i class="fas fa-clock text-orange-500 ml-1"></i>5-6 أيام</td>
+                                <td class="px-6 py-4 font-bold text-2xl text-green-600">$250</td>
+                            </tr>
+                            <tr class="hover:bg-orange-50 transition-colors border-2 border-orange-300 bg-orange-50">
+                                <td class="px-6 py-4 font-bold text-pink-600">المتقدمة <span
+                                        class="bg-orange-400 text-orange-900 px-2 py-1 rounded-full text-xs mr-2">الأكثر
+                                        ربحية</span></td>
+                                <td class="px-6 py-4">مشروع تجاري يدير مبيعاته بشكل دوري</td>
+                                <td class="px-6 py-4 text-sm">كل ما سبق + لوحة تحكم - فلترة - استضافة + دومين - لغتين
+                                </td>
+                                <td class="px-6 py-4"><span
+                                        class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm">✅</span></td>
+                                <td class="px-6 py-4"><i class="fas fa-clock text-orange-500 ml-1"></i>7-10 أيام</td>
+                                <td class="px-6 py-4 font-bold text-2xl text-green-600">$500-600</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Local Business Packages -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-primary mb-6">باقات المحلات المحلية</h2>
+                <p class="text-xl text-gray-600">حلول متكاملة للمحلات والعلامات التجارية المحلية</p>
+            </div>
+
+            <div class="overflow-x-auto">
+                <div class="table-modern bg-white min-w-full">
+                    <table class="w-full">
+                        <thead class="bg-gradient-to-r from-purple-600 to-pink-600 text-white">
+                            <tr>
+                                <th class="px-6 py-4 text-right font-bold">الباقة</th>
+                                <th class="px-6 py-4 text-right font-bold">مناسبة لـ</th>
+                                <th class="px-6 py-4 text-right font-bold">الميزات</th>
+                                <th class="px-6 py-4 text-right font-bold">نظام الحجز</th>
+                                <th class="px-6 py-4 text-right font-bold">التسليم</th>
+                                <th class="px-6 py-4 text-right font-bold">السعر</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="hover:bg-purple-50 transition-colors">
+                                <td class="px-6 py-4 font-bold text-purple-600">الأساسية</td>
+                                <td class="px-6 py-4">محلات صغيرة تحتاج عرض بسيط</td>
+                                <td class="px-6 py-4 text-sm">متجاوب - موقع بالخريطة - أوقات العمل - مراجعة واحدة</td>
+                                <td class="px-6 py-4"><span
+                                        class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-sm">❌</span></td>
+                                <td class="px-6 py-4"><i class="fas fa-clock text-purple-500 ml-1"></i>3-4 أيام</td>
+                                <td class="px-6 py-4 font-bold text-2xl text-green-600">$130</td>
+                            </tr>
+                            <tr class="bg-purple-25 hover:bg-purple-75 transition-colors">
+                                <td class="px-6 py-4 font-bold text-pink-600">المتوسطة</td>
+                                <td class="px-6 py-4">محل نشط يريد حجز أو طلب</td>
+                                <td class="px-6 py-4 text-sm">كل ما سبق + تصنيفات - نموذج حجز - صور للعروض والمنيو</td>
+                                <td class="px-6 py-4"><span
+                                        class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-sm">حجز
+                                        بسيط</span></td>
+                                <td class="px-6 py-4"><i class="fas fa-clock text-purple-500 ml-1"></i>5-6 أيام</td>
+                                <td class="px-6 py-4 font-bold text-2xl text-green-600">$250</td>
+                            </tr>
+                            <tr class="hover:bg-purple-50 transition-colors border-2 border-purple-300 bg-purple-50">
+                                <td class="px-6 py-4 font-bold text-indigo-600">الاحترافية <span
+                                        class="bg-purple-400 text-purple-900 px-2 py-1 rounded-full text-xs mr-2">الأكثر
+                                        تطوراً</span></td>
+                                <td class="px-6 py-4">علامة تجارية محلية تريد التوسع</td>
+                                <td class="px-6 py-4 text-sm">كل ما سبق + نظام حجز كامل - لوحة تحكم - دومين + استضافة -
+                                    لغتين</td>
+                                <td class="px-6 py-4"><span
+                                        class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm">حجز
+                                        كامل</span></td>
+                                <td class="px-6 py-4"><i class="fas fa-clock text-purple-500 ml-1"></i>7-10 أيام</td>
+                                <td class="px-6 py-4 font-bold text-2xl text-green-600">$500-600</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Services -->
+    <section class="py-20 bg-gradient-to-br from-indigo-50 to-purple-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-primary mb-6">الإضافات والخدمات الإضافية</h2>
+                <p class="text-xl text-gray-600">خدمات إضافية لتعزيز موقعك</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card-hover bg-white p-6 rounded-2xl shadow-lg border-t-4 border-blue-500">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-bold text-lg text-gray-800">دومين + استضافة</h3>
+                        <span class="text-2xl font-bold text-green-600">$100/سنة</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">استضافة احترافية مع دومين مخصص</p>
+                    <i class="fas fa-server text-blue-500 text-2xl mt-4"></i>
+                </div>
+
+                <div class="card-hover bg-white p-6 rounded-2xl shadow-lg border-t-4 border-green-500">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-bold text-lg text-gray-800">نظام حجز فقط</h3>
+                        <span class="text-2xl font-bold text-green-600">+$150</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">إضافة نظام حجز متطور لموقعك الحالي</p>
+                    <i class="fas fa-calendar-alt text-green-500 text-2xl mt-4"></i>
+                </div>
+
+                <div class="card-hover bg-white p-6 rounded-2xl shadow-lg border-t-4 border-purple-500">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-bold text-lg text-gray-800">صيانة شهرية</h3>
+                        <span class="text-2xl font-bold text-green-600">$30-70</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">تحديث المحتوى والصور والمعلومات</p>
+                    <i class="fas fa-tools text-purple-500 text-2xl mt-4"></i>
+                </div>
+
+                <div class="card-hover bg-white p-6 rounded-2xl shadow-lg border-t-4 border-orange-500">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-bold text-lg text-gray-800">لغة إضافية</h3>
+                        <span class="text-2xl font-bold text-green-600">+$50</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">إضافة لغة جديدة لموقعك</p>
+                    <i class="fas fa-language text-orange-500 text-2xl mt-4"></i>
+                </div>
+
+                <div class="card-hover bg-white p-6 rounded-2xl shadow-lg border-t-4 border-red-500">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-bold text-lg text-gray-800">إشعارات واتساب</h3>
+                        <span class="text-2xl font-bold text-green-600">+$50</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">ربط الحجز بإشعارات واتساب</p>
+                    <i class="fab fa-whatsapp text-red-500 text-2xl mt-4"></i>
+                </div>
+
+                <div class="card-hover bg-white p-6 rounded-2xl shadow-lg border-t-4 border-teal-500">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-bold text-lg text-gray-800">تصميم شعار</h3>
+                        <span class="text-2xl font-bold text-green-600">+$30</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">تصميم شعار بسيط واحترافي</p>
+                    <i class="fas fa-paint-brush text-teal-500 text-2xl mt-4"></i>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <div
+                    class="inline-block bg-gradient-to-r from-red-500 to-pink-500 text-white px-8 py-4 rounded-2xl shadow-lg">
+                    <h3 class="font-bold text-xl mb-2">
+                        <i class="fas fa-rocket ml-2"></i>
+                        تسريع التسليم (48 ساعة)
+                    </h3>
+                    <p class="text-lg">+$50 فقط</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-primary mb-6">لماذا تختار Codenest؟</h2>
+                <p class="text-xl text-gray-600">نحن نقدم أكثر من مجرد تصميم موقع</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center p-8 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 card-hover">
+                    <div
+                        class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4 floating">
+                        <i class="fas fa-tachometer-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-gray-800 mb-2">سرعة في التسليم</h3>
+                    <p class="text-gray-600">نلتزم بمواعيد التسليم المحددة</p>
+                </div>
+
+                <div class="text-center p-8 rounded-2xl bg-gradient-to-br from-green-50 to-teal-50 card-hover">
+                    <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4 floating"
+                        style="animation-delay: -0.5s;">
+                        <i class="fas fa-mobile-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-gray-800 mb-2">تصميم متجاوب</h3>
+                    <p class="text-gray-600">مواقع تعمل بسلاسة على جميع الأجهزة</p>
+                </div>
+
+                <div class="text-center p-8 rounded-2xl bg-gradient-to-br from-purple-50 to-pink-50 card-hover">
+                    <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4 floating"
+                        style="animation-delay: -1s;">
+                        <i class="fas fa-search text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-gray-800 mb-2">SEO محسن</h3>
+                    <p class="text-gray-600">مواقع محسنة لمحركات البحث</p>
+                </div>
+
+                <div class="text-center p-8 rounded-2xl bg-gradient-to-br from-orange-50 to-red-50 card-hover">
+                    <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 floating"
+                        style="animation-delay: -1.5s;">
+                        <i class="fas fa-headset text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-gray-800 mb-2">دعم فني</h3>
+                    <p class="text-gray-600">دعم مستمر بعد التسليم</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section id="contact" class="py-20 gradient-bg hero-pattern relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-30"></div>
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                    جاهز لبدء مشروعك؟
+                </h2>
+                <p class="text-xl md:text-2xl text-white opacity-90 mb-8">
+                    تواصل معنا الآن واحصل على استشارة مجانية لاختيار الباقة المناسبة لك
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
+                    <a href="mailto:info@codenest.com"
+                        class="bg-white hover:bg-gray-100 text-primary px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 glow flex items-center">
+                        <i class="fas fa-envelope ml-2"></i>
+                        info@codenest.com
+                    </a>
+                    <a href="http://www.codenest.com" target="_blank"
+                        class="border-2 border-white hover:bg-white hover:text-primary text-white px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center">
+                        <i class="fas fa-globe ml-2"></i>
+                        www.codenest.com
+                    </a>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8 text-white">
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-clock text-4xl mb-4 text-yellow-300"></i>
+                        <h3 class="font-bold text-xl mb-2">استجابة سريعة</h3>
+                        <p class="opacity-90">نرد خلال 24 ساعة</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-handshake text-4xl mb-4 text-yellow-300"></i>
+                        <h3 class="font-bold text-xl mb-2">ضمان الجودة</h3>
+                        <p class="opacity-90">مراجعات مجانية حتى الرضا</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-shield-alt text-4xl mb-4 text-yellow-300"></i>
+                        <h3 class="font-bold text-xl mb-2">أمان وحماية</h3>
+                        <p class="opacity-90">مواقع آمنة ومحمية</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating elements -->
+        <div class="absolute top-10 left-10 w-24 h-24 bg-yellow-300 rounded-full opacity-20 floating"></div>
+        <div class="absolute bottom-10 right-10 w-32 h-32 bg-blue-300 rounded-full opacity-20 floating"
+            style="animation-delay: -1s;"></div>
+        <div class="absolute top-1/3 right-20 w-20 h-20 bg-green-300 rounded-full opacity-20 floating"
+            style="animation-delay: -2s;"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-8">
+                <h3 class="text-3xl font-bold mb-2">
+                    <i class="fas fa-code text-accent ml-2"></i>
+                    Codenest
+                </h3>
+                <p class="text-gray-400">تصميم احترافي وحلول متكاملة لموقعك الإلكتروني</p>
+            </div>
+
+            <div class="flex justify-center space-x-reverse space-x-6 mb-8">
+                <a href="mailto:info@codenest.com" class="text-gray-400 hover:text-white transition-colors">
+                    <i class="fas fa-envelope text-2xl"></i>
+                </a>
+                <a href="http://www.codenest.com" target="_blank"
+                    class="text-gray-400 hover:text-white transition-colors">
+                    <i class="fas fa-globe text-2xl"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                    <i class="fab fa-whatsapp text-2xl"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                    <i class="fab fa-telegram text-2xl"></i>
+                </a>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8">
+                <p class="text-gray-400">
+                    © 2024 Codenest. جميع الحقوق محفوظة.
+                </p>
+                <p class="text-sm text-gray-500 mt-2">
+                    تم التطوير بـ <i class="fas fa-heart text-red-500"></i> لخدمة عملائنا الكرام
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <button id="scrollToTop"
+        class="fixed bottom-8 left-8 bg-primary hover:bg-secondary text-white p-4 rounded-full shadow-lg transition-all transform hover:scale-110 opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll to top button functionality
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.remove('opacity-0', 'invisible');
+                scrollToTopBtn.classList.add('opacity-100', 'visible');
+            } else {
+                scrollToTopBtn.classList.add('opacity-0', 'invisible');
+                scrollToTopBtn.classList.remove('opacity-100', 'visible');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Add loading animation
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+    </script>
 </body>
+
 </html>
